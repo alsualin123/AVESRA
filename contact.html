@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AVESRA - Products</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .product {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #fff5eb;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .product img {
+      width: 150px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h3 {
+      color: #F58220;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      margin-bottom: 10px;
+    }
+
+    .toggle-content {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .toggle-btn {
+      background-color: transparent;
+      color: #F58220;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <a href="index.html" class="logo-container">
+      <img src="logoavesra.png.png" alt="Logo AVESRA">
+      <h2>AVESRA</h2>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="products.html" class="active">PRODUCTS</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="price.html">PRICE</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="login.html">INICIAR SESIÓN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido -->
+  <main>
+    <h1>Productos</h1>
+    <p style="text-align:center;">Descubre nuestras soluciones avanzadas para proteger tu infraestructura digital.</p>
+
+    <section class="product-list">
+
+      <!-- Producto 1 -->
+      <article class="product">
+        <img src="firewall.jpg" alt="Firewall Inteligente">
+        <div class="product-info">
+          <h3>Firewall Inteligente</h3>
+          <p>Protección activa contra intrusiones y amenazas.</p>
+          <button class="toggle-btn" onclick="toggleText(this)">Ver más</button>
+          <div class="toggle-content">
+            <p>Este firewall aprende del tráfico de tu red para detectar patrones sospechosos. Adaptable, escalable y fácil de usar.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 2 -->
+      <article class="product">
+        <img src="vulnerabilidades.jpg" alt="Escáner de Vulnerabilidades">
+        <div class="product-info">
+          <h3>Escáner de Vulnerabilidades</h3>
+          <p>Identifica puntos débiles antes de que lo hagan los atacantes.</p>
+          <button class="toggle-btn" onclick="toggleText(this)">Ver más</button>
+          <div class="toggle-content">
+            <p>Escanea tus sistemas y aplicaciones en busca de vulnerabilidades conocidas y configuraciones inseguras.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Producto 3 -->
+      <article class="product">
+        <img src="monitor-red.jpg" alt="Monitor de Red">
+        <div class="product-info">
+          <h3>Monitor de Red</h3>
+          <p>Observa todo lo que pasa en tu red en tiempo real.</p>
+          <button class="toggle-btn" onclick="toggleText(this)">Ver más</button>
+          <div class="toggle-content">
+            <p>Visualiza tráfico sospechoso, analiza comportamiento y mejora la visibilidad de tu infraestructura digital.</p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script>
+    function toggleText(button) {
+      const content = button.nextElementSibling;
+      const visible = content.classList.contains('show');
+      content.classList.toggle('show');
+      button.textContent = visible ? 'Ver más' : 'Ver menos';
+    }
+  </script>
+
+</body>
+</html>
